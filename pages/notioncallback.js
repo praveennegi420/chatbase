@@ -25,8 +25,8 @@ export default function NotionCallback () {
             }
     
             const data = await response.json();
-            // const pageData= 
             console.log('Token response:', data);
+            // window.close();
           } catch (error) {
             console.error('Error fetching token:', error);
           }

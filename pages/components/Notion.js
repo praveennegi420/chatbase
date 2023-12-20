@@ -1,8 +1,16 @@
 import React from 'react';
+import { useEffect } from 'react';
 import Popup from './Popup';
+import { useRouter } from 'next/router';
 
 const Notion = () => {
     const [popUp, setPopUp] = React.useState(false);
+    const router = useRouter();
+
+    useEffect(() => {
+        const receivedData = router.query.data;
+        console.log('Received data:', receivedData);
+    }, [router.query]);
 
     return (
         <div className="max-w-2xl lg:w-4/6">
@@ -14,7 +22,7 @@ const Notion = () => {
                     <div className="flex flex-col items-center">
                         <div className="py-12">
                             <button
-                                data-variant="flat" 
+                                data-variant="flat"
                                 onClick={() => setPopUp(true)}
                                 className="inline-flex items-center justify-center h-8 transform-none normal-case cursor-pointer rounded leading-6 transition ease-in-out duration-150 shadow-sm text-center focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-violet-500 border border-bg-grey-400 w-fit gap-3 bg-white p-6 font-semibold text-black hover:bg-gray-100 hover:text-black"
                             >
@@ -63,7 +71,7 @@ const Notion = () => {
                     </div>
                 </div>
             </div>
-            <Popup view={popUp} setView={setPopUp}/>
+            <Popup view={popUp} setView={setPopUp} />
         </div>
     );
 };
