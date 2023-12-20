@@ -31,7 +31,7 @@ const Notion = () => {
                             </button>
                         </div>
                         <div className="font-semibold"></div>
-                        <div className="flex w-full flex-col items-center">
+                        {/* <div className="flex w-full flex-col items-center">
                             <div className="w-full">
                                 <div className="my-4 flex items-center">
                                     <hr className="w-full border-t border-gray-300" />
@@ -53,7 +53,7 @@ const Notion = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         <div
                             aria-live="assertive"
                             className="pointer-events-none fixed inset-0 z-20 flex items-end px-4 py-6 sm:items-start sm:p-6"
