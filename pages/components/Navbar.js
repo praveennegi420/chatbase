@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 export default function Navbar() {
@@ -13,7 +14,7 @@ export default function Navbar() {
                                 <nav className="flex" aria-label="Breadcrumb">
                                     <div role="list" className="flex flex-row items-center space-x-2 sm:space-x-0">
                                         <div className="flex items-center">
-                                            <a href="/">
+                                            <Link href="/">
                                                 <div className="flex flex-row items-center gap-1">
                                                     <Image
                                                         alt="Chatbase"
@@ -28,7 +29,7 @@ export default function Navbar() {
                                                     />
                                                     <span className="hidden text-lg font-normal md:block text-slate-800">Chatbase</span>
                                                 </div>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </nav>
@@ -57,18 +58,18 @@ export default function Navbar() {
                                     </svg>
                                 </div>
                             </button>
-                            <a
+                            <Link
                                 className="hidden rounded-lg p-2 text-sm font-semibold leading-6 text-slate-600 outline-0 transition-all duration-75 ease-in-out hover:text-slate-900 lg:block"
                                 href="/help"
                             >
                                 Help
-                            </a>
-                            <a
+                            </Link>
+                            <Link
                                 className="hidden rounded-lg p-2 text-sm font-semibold leading-6 text-slate-600 outline-0 transition-all duration-75 ease-in-out hover:text-slate-900 lg:block"
                                 href="/account"
                             >
                                 Account<span aria-hidden="true"> →</span>
-                            </a>
+                            </Link>
                         </div>
                     </section>
                 </header>
