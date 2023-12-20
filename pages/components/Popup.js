@@ -21,7 +21,7 @@ const Popup = (props) => {
                                 <h3 className="text-lg font-medium leading-6 text-gray-900" id="headlessui-dialog-title-:r2:" data-headlessui-state="open">Connect Notion</h3>
                                 <div className="mt-2 flex flex-col gap-4">
                                     <p className="mt-2 mb-0 font-semibold">A Notion popup will now appear.</p>
-                                    <p className="mb-2 font-semibold">Please don't unselect already selected pages.</p>
+                                    <p className="mb-2 font-semibold">Please dont unselect already selected pages.</p>
                                     <p className="text-sm text-zinc-500">Please note that the pages you select will affect the Notion pages Chatbase has access to across all your chatbots, as well as any other Chatbase accounts connected to the same Notion account.</p>
                                     <p className="mb-2 text-sm text-zinc-500">If you have any previously selected pages for other active chatbots. Please leave them selected.</p>
                                 </div>
