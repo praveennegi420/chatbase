@@ -1,9 +1,9 @@
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Source from './components/Source';
-import File from './components/File';
+import Textdata from './components/Text';
 
-export default function Home() {
+export default function Text() {
   return (
     <>
       <Navbar />
@@ -13,7 +13,7 @@ export default function Home() {
             <Sidebar />
             <div class="col-span-12 sm:col-span-8 lg:col-span-10">
               <div class="flex flex-col align-top lg:flex-row lg:space-x-8 lg:align-middle">
-                <File />
+                <Textdata />
                 <Source />
               </div>
             </div>
