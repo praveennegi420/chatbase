@@ -9,7 +9,7 @@ export default function NotionCallback () {
     useEffect(() => {
         const getToken = async () => {
           try {
-            const response = await fetch('http://localhost:3000/api/notiondata', {
+            const response = await fetch('/api/notiondata', {
               method: 'POST', 
               headers: {
                 Accept: 'application/json',
