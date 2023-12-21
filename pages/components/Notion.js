@@ -7,13 +7,13 @@ const Notion = () => {
     const [popUp, setPopUp] = React.useState(false);
     const [popClosed, setPopClosed] = React.useState(false);
     const [notionDataChanged, setNotionDataChanged] = React.useState([]);
-
+    let val=0;
     useEffect(() => {
-        const data= JSON.parse(localStorage.getItem('notionData'));
+        const data= JSON.parse(localStorage.getItem('notionData')); 
         setNotionDataChanged(data);
     }, [popClosed]);
 
-    return (
+    return ( 
         <div className="max-w-2xl lg:w-4/6">
             <div className="mb-10 rounded border border-gray-200">
                 <div className="border-b border-gray-200 bg-white py-4 px-5">
@@ -48,7 +48,7 @@ const Notion = () => {
                                     <span className="whitespace-nowrap px-2 text-gray-600">Imported Pages</span>
                                     <hr className="w-full border-t border-gray-300" />
                                 </div>
-                                {notionDataChanged?.map(data=> <PageContent data={data}/> )}
+                                { notionDataChanged?.map((data,val)=> <PageContent data={data} key={val+1}/> )}
                             </div>
                             
                         </div>) : <></> 
