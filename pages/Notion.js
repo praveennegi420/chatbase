@@ -2,7 +2,7 @@ import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Source from './components/Source';
 import Notiondata from './components/Notion';
-import Popup from './components/Popup';
+
 
 export default function Notion() {
   return (

@@ -28,11 +28,20 @@ export default async function handler(req, res) {
         }
 
         const data = await response.json();
-        const notion = new Client({ auth: data.access_token });
-        const pages = await notion.search({});
-        return res.status(200).json(pages.results);
-    } catch (error) {
+        const notion = new Client({ auth: data.access_token });         
+        const pages = await notion.search({filter: { value: 'page', property: 'object'}});
+        const pageData= pages.results.map(async(page)=>{
+            const blockData = await notion.blocks.retrieve({block_id: page.id,});
+            
+            const childData = await notion.blocks.children.list({ block_id: page.id, page_size: 50, });   
+            const childText= childData.results.map((child)=>{ return child.paragraph.rich_text.map(text=>{ return text.plain_text }); })
+            const plainChildText= [].concat(...childText.map((id) => id.map((value) => value)));
+            
+            return {title: blockData.child_page.title, text: plainChildText[0]};
+        });
+        return res.status(200).json({data: await Promise.all(pageData)});
+        
+    } catch (error) {     
         console.error('Error fetching token:', error);
-    }
-    res.status(200).json({ name: 'John Doe' });
+    }   
 }

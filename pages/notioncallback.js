@@ -1,11 +1,11 @@
 import { useEffect} from 'react';
 import { useRouter } from 'next/router';
-import cors from 'cors';
+
 import Link from 'next/link';
 
 export default function NotionCallback () {
     const router = useRouter();
-
+    
     useEffect(() => {
         const getToken = async () => {
           try {
@@ -25,8 +25,10 @@ export default function NotionCallback () {
             }
     
             const data = await response.json();
-            console.log('Token response:', data);
-            // window.close();
+            console.log('Token response:', data.data);
+            localStorage.setItem('notionData', JSON.stringify(data.data));
+            
+            window.close();
           } catch (error) {
             console.error('Error fetching token:', error);
           }
