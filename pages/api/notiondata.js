@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
     const clientId = 'fefbf096-4a5b-48d1-9f69-5d1e52a64363';
     const clientSecret = 'secret_t59HmR0bxp7VBiGhNfvQlIEF4Ze6XJjio8IBKrMREag';
-    const redirectUri = 'https://chatbase-test.vercel.app/notioncallback';
+    const redirectUri = 'http://localhost:3000/notioncallback';
     const { Client } = require('@notionhq/client');
 
 
@@ -13,7 +13,7 @@ export default async function handler(req, res) {
 
             headers: {
                 Accept: 'application/json',
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json',   
                 Authorization: `Basic ${encoded}`,
             },
             body: JSON.stringify({

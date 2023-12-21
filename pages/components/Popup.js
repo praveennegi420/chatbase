@@ -3,7 +3,7 @@ import React from 'react';
 const Popup = (props) => {
     let popupWindow;
     function openPopup() {
-        popupWindow = window.open('https://api.notion.com/v1/oauth/authorize?client_id=fefbf096-4a5b-48d1-9f69-5d1e52a64363&response_type=code&owner=user&redirect_uri=https%3A%2F%2Fchatbase-test.vercel.app%2Fnotioncallback','_blank','menubar=yes,resizable=no, scrollbars=yes, status=no, height=750, width=500, left=580 top=120');
+        popupWindow = window.open('https://api.notion.com/v1/oauth/authorize?client_id=fefbf096-4a5b-48d1-9f69-5d1e52a64363&response_type=code&owner=user&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fnotioncallback','_blank','menubar=yes,resizable=no, scrollbars=yes, status=no, height=750, width=500, left=580 top=120');
         checkWindowStatus();
     }
 

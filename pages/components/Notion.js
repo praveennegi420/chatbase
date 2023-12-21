@@ -13,6 +13,8 @@ const Notion = () => {
         setNotionDataChanged(data);
     }, [popClosed]);
 
+    console.log(notionDataChanged);
+    
     return ( 
         <div className="max-w-2xl lg:w-4/6">
             <div className="mb-10 rounded border border-gray-200">
