@@ -49,7 +49,7 @@ const Notion = () => {
                                     <hr className="w-full border-t border-gray-300" />
                                     <span className="whitespace-nowrap px-2 text-gray-600">Imported Pages</span>
                                     <hr className="w-full border-t border-gray-300" />
-                                </div>
+                                </div> 
                                 { notionDataChanged?.map((data,val)=> <PageContent data={data} key={val+1}/> )}
                             </div>
                             
